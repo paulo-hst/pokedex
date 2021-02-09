@@ -1,40 +1,51 @@
-import React from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 
-const Pokemon = props => {
-    
+const Pokemon = props => {    
+
+    // Valor recebido via INPUT: props.sendPokemonName
+
+    const [ id, setId ] = useState('')
+    const [ name, setName ] = useState('')
+    const [ height, setHeight ] = useState('')
+    const [ weight, setWeight ] = useState('')
+    const [ type, setType ] = useState('')
+    const [ img, setImg ]= useState('')
+
+
     const URL = 'https://pokeapi.co/api/v2/'
-    const pokemonName = 'pikachu'
+    const pokemonName = 'entei'
 
     async function find(){
-
-        const pokemons = []
         
-        const api = axios.create({ baseURL: URL })
-        const response = await api.get(`/pokemon/${pokemonName}`)
-    
-    
-        const type = response.data.types[0].type.name
-        const { id, name, height, weight } = response.data
+        let api = axios.create({ baseURL: URL })
+        let response = await api.get(`/pokemon/${pokemonName}`)
 
-        pokemons.push({
-            id,
-            name,
-            height, 
-            weight, 
-            type, 
-        })
+        let { id, name, height, weight } = response.data
+        let type = response.data.types[0].type.name
+
+        console.log(response.data.sprites.front_default)
+
+        setId(id)
+        setName(name)
+        setHeight(height)
+        setWeight(weight)
+        setType(type)
+        setImg(response.data.sprites.front_default)
     }
-
     find()
+    
+
 
     return(
         <section>
-            <h2>{  }</h2>
-            <p>Tipo: {  }</p>
-            <p>Peso: { }</p>
-            <p>Altura: { }</p>
+            <h2>Nome: { name }</h2>
+            <p>ID: { id }</p>
+            <p>Tipo: { type }</p>
+            <p>Peso: { (weight / 10).toFixed(1).replace('.',',') } kg</p>
+            <p>Altura: { (height / 10).toFixed(2).replace('.',',')  } m</p>
             <p>Habilidades: { }</p>
+            <img src={img} alt=""/>
         </section>
     )
 }

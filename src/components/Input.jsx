@@ -5,12 +5,11 @@ const Input = props => {
     const [ name, setName ] = useState('')
 
     function setDataInput(){
-        props.quandoClicar(name)
+        props.getDataInput(name)
     }
 
     function getPokemon(event){
-        const pokemonName = event.target.value
-        setName(pokemonName)
+        setName(event.target.value)
     }
     
     return(

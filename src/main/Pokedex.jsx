@@ -11,13 +11,12 @@ const Pokedex = props => {
     function getData(name){
         setName(name)
     }
-
+    
     return(
         <main>
             <h1>Pokedex</h1>
-            <h1>Nome: { name }</h1>
-            <Input quandoClicar={getData}></Input>
-            <Pokemon></Pokemon>
+            <Input getDataInput={getData}></Input>
+            <Pokemon sendPokemonName={name}></Pokemon>
         </main>
     )
 }
