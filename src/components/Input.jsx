@@ -4,6 +4,10 @@ const Input = props => {
 
     const [ name, setName ] = useState('')
 
+    function setDataInput(){
+        props.quandoClicar(name)
+    }
+
     function getPokemon(event){
         const pokemonName = event.target.value
         setName(pokemonName)
@@ -17,8 +21,7 @@ const Input = props => {
                 type="text"
                 onChange={getPokemon}
             />
-            <button onClick={() => console.log('teste')}>Enviar</button>
-            <span>{name}</span>
+            <button onClick={ setDataInput }>Enviar</button>
         </div>
     )
 }
