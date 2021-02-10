@@ -4,13 +4,14 @@ const Input = props => {
 
     const [ name, setName ] = useState('')
 
+    function getPokemon(event){
+        setName(event.target.value)
+    }
+
     function setDataInput(){
         props.getDataInput(name)
     }
 
-    function getPokemon(event){
-        setName(event.target.value)
-    }
     
     return(
         <div>
@@ -19,6 +20,7 @@ const Input = props => {
                 id="input"
                 type="text"
                 onChange={getPokemon}
+        
             />
             <button onClick={ setDataInput }>Enviar</button>
         </div>

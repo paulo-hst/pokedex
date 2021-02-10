@@ -1,41 +1,46 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const Pokemon = props => {    
+const URL = 'https://pokeapi.co/api/v2/'
+const api = axios.create({ baseURL: URL })
 
-    // Valor recebido via INPUT: props.sendPokemonName
+const Pokemon = props => {
 
     const [ id, setId ] = useState('')
     const [ name, setName ] = useState('')
     const [ height, setHeight ] = useState('')
     const [ weight, setWeight ] = useState('')
     const [ type, setType ] = useState('')
+    const [ ability, setAbility ] = useState('')
     const [ img, setImg ]= useState('')
 
 
-    const URL = 'https://pokeapi.co/api/v2/'
-    const pokemonName = 'entei'
-
-    async function find(){
-        
-        let api = axios.create({ baseURL: URL })
-        let response = await api.get(`/pokemon/${pokemonName}`)
-
-        let { id, name, height, weight } = response.data
-        let type = response.data.types[0].type.name
-
-        console.log(response.data.sprites.front_default)
-
-        setId(id)
-        setName(name)
-        setHeight(height)
-        setWeight(weight)
-        setType(type)
-        setImg(response.data.sprites.front_default)
+    if(props.sendPokemonName !== ''){
+        findPokemon(props.sendPokemonName.toLowerCase())
     }
-    find()
-    
 
+    async function findPokemon(pokemonName){        
+        try {
+            let response = await api.get(`/pokemon/${pokemonName}`)
+
+            let { id, name, height, weight, sprites: { front_default } } = response.data
+            let type = response.data.types[0].type.name
+
+            // let ability = response.data.moves.map(item => ' ' + item.move.name)
+            // console.log('teste de chamadas')
+
+            setId(id)
+            setName(name)
+            setHeight(height)
+            setWeight(weight)
+            setType(type)
+            setImg(front_default)
+            setAbility(ability)
+
+        } catch (error) {
+            alert('Pokemon não encontrado!')
+        }
+    }
 
     return(
         <section>
@@ -44,7 +49,7 @@ const Pokemon = props => {
             <p>Tipo: { type }</p>
             <p>Peso: { (weight / 10).toFixed(1).replace('.',',') } kg</p>
             <p>Altura: { (height / 10).toFixed(2).replace('.',',')  } m</p>
-            <p>Habilidades: { }</p>
+            <p>Habilidades: { ability }</p>
             <img src={img} alt=""/>
         </section>
     )
