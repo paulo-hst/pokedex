@@ -14,10 +14,15 @@ const Pokemon = props => {
     const [ ability, setAbility ] = useState('')
     const [ img, setImg ]= useState('')
 
+    // if(props.sendPokemonName !== ''){
+    //     findPokemon(props.sendPokemonName.toLowerCase())
+    // }
 
-    if(props.sendPokemonName !== ''){
-        findPokemon(props.sendPokemonName.toLowerCase())
-    }
+    useEffect(() => {
+        if(props.sendPokemonName !== ''){
+            findPokemon(props.sendPokemonName.toLowerCase())
+        }
+    }, [props.sendPokemonName])
 
     async function findPokemon(pokemonName){        
         try {
@@ -25,17 +30,17 @@ const Pokemon = props => {
 
             let { id, name, height, weight, sprites: { front_default } } = response.data
             let type = response.data.types[0].type.name
+            let ability = response.data.moves.slice(0,50).map(item => ' ' + item.move.name).toString()
 
-            // let ability = response.data.moves.map(item => ' ' + item.move.name)
-            // console.log('teste de chamadas')
-
+            console.log(ability)
+            
             setId(id)
             setName(name)
             setHeight(height)
             setWeight(weight)
             setType(type)
             setImg(front_default)
-            setAbility(ability)
+            setAbility(ability)            
 
         } catch (error) {
             alert('Pokemon não encontrado!')
