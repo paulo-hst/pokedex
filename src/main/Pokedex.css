@@ -5,9 +5,27 @@
     box-sizing: border-box;
 }
 body{
-    background: #888888;
+    background: url(../Images/bg-bs.jpg) no-repeat center center fixed;
+    background-size: cover;
+    background-color: #cccccc;
 }
 
-main{
-    background: blue;
+#main-container{
+    width: 500px;
+    text-align: center;
+
+    margin: 10px auto;
+    padding: 15px 0px;
+
+    border-radius: 5px;
+
+    background: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 538px){
+    
+    #main-container{
+        max-width: 320px;
+        margin: 10px auto;
+    }
 }

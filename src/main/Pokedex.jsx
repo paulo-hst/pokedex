@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Input from '../components/Input'
 import Pokemon from '../components/Pokemon'
 import Logo from '../components/Logo'
+
 import './Pokedex.css'
 
 
@@ -14,7 +15,7 @@ const Pokedex = props => {
     }
     
     return(
-        <main>
+        <main id="main-container">
             <Logo />
             <Input getDataInput={getData}></Input>
             <Pokemon sendPokemonName={name}></Pokemon>

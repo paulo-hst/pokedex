@@ -4,8 +4,8 @@ import logo from '../Images/logo.svg'
 
 const Logo = props => {
     return(
-        <div>
-            <img src={logo} alt="Logo Pokedex" srcset=""/>
+        <div id="logo-pokedex">
+            <img src={logo} alt="Logo Pokedex" srcSet=""/>
         </div>
     )
 }

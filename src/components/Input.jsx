@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './Input.css'
 
 const Input = props => {
 
@@ -14,7 +15,7 @@ const Input = props => {
 
     
     return(
-        <div>
+        <div id="inputPokemon">
             <label htmlFor="input"></label>
             <input
                 id="input"
