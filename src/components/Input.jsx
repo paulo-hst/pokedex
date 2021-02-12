@@ -23,7 +23,7 @@ const Input = props => {
                 onChange={getPokemon}
         
             />
-            <button onClick={ setDataInput }>Enviar</button>
+            <button onClick={ setDataInput }>Pesquisar</button>
         </div>
     )
 }

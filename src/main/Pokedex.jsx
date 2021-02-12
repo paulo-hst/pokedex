@@ -5,6 +5,12 @@ import Logo from '../components/Logo'
 
 import './Pokedex.css'
 
+// Próximos passos:
+// - Centralizar Container
+// - Alterar Fonte
+// - Limpar Input ao clicar em enviar
+// - 
+
 
 const Pokedex = props => {
 
