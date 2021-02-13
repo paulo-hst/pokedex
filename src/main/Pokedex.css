@@ -8,7 +8,7 @@
 
 @font-face{
     font-family: 'Raleway Regular';
-    src: local('Raleway Regular'), url(../fonts/Raleway-Regular.ttf) format('truetype');
+    src: local('Raleway Regular'), url(../fonts/Raleway-Medium.ttf) format('truetype');
   }
   @font-face{
     font-family: 'Raleway Light';
