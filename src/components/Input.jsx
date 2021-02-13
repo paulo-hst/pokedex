@@ -12,7 +12,6 @@ const Input = props => {
     function setDataInput(){
         props.getDataInput(name)
     }
-
     
     return(
         <div id="inputPokemon">
@@ -20,9 +19,8 @@ const Input = props => {
             <input
                 id="input"
                 type="text"
-                placeholder="Digite o nome do pokemon"
-                onChange={getPokemon}
-        
+                placeholder="Nome do Pokemon"
+                onChange={getPokemon}        
             />
             <button onClick={ setDataInput }>Pesquisar</button>
         </div>

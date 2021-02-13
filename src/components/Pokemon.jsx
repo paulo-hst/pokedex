@@ -27,10 +27,7 @@ const Pokemon = props => {
     }
 
     async function findPokemon(pokemonName){
-        
-
         try {
-
             let response = await api.get(`/pokemon/${pokemonName}`)
 
             let { id, name, height, weight, sprites: { front_default } } = response.data
@@ -50,6 +47,7 @@ const Pokemon = props => {
         } catch (error) {
             alert('Pokemon não encontrado!')
         }
+        changeBackground()
     }
 
     return(

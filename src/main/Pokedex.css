@@ -1,32 +1,13 @@
-/* ------------ Resets ------------ */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;600&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/*
-@font-face{
-    font-family: 'Raleway Regular';
-    src: local('Raleway Regular'), url(../fonts/Raleway-Medium.ttf) format('truetype');
-  }
-  @font-face{
-    font-family: 'Raleway Light';
-    src: local('Raleway Light'), url(../fonts/Raleway-Light.ttf) format('truetype');
-  }
-  @font-face{
-    font-family: 'Raleway Thin';
-    src: local('Raleway Thin'), url(../fonts/Raleway-Thin.ttf) format('truetype');
-  }
-  @font-face{
-    font-family: 'Raleway Bold';
-    src: local('Raleway Bold'), url(../fonts/Raleway-SemiBold.ttf) format('truetype');
-  }
-  */
-
-  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;600&display=swap');
 
 body{
-    background: url(../Images/bg-bs.jpg) no-repeat center center fixed;
+    background: url(../Images/bg.png) no-repeat center center fixed;
     background-size: cover;
     background-color: #cccccc;
     font-family: 'Raleway', sans-serif;
