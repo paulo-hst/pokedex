@@ -20,6 +20,7 @@ const Input = props => {
             <input
                 id="input"
                 type="text"
+                placeholder="Digite o nome do pokemon"
                 onChange={getPokemon}
         
             />
