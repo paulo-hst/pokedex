@@ -42,12 +42,27 @@ const Pokemon = props => {
             setImg(front_default)
             setAbility(ability) 
 
-            showPokemonData()           
+            showPokemonData()    
+            changeBackground(id)       
 
         } catch (error) {
             alert('Pokemon não encontrado!')
+        }        
+    }
+
+    function changeBackground(id){
+        const imagePokemon = document.querySelector('body')
+        imagePokemon.removeAttribute('class')
+        
+        if(id === 1){
+            imagePokemon.classList.add('bulbasaurBackground')
+        }else if(id === 4){
+            imagePokemon.classList.add('charmanderBackground')
+        }else if(id === 7){
+            imagePokemon.classList.add('squirtleBackground')
+        }else{
+            imagePokemon.classList.add('genericBackground')
         }
-        changeBackground()
     }
 
     return(

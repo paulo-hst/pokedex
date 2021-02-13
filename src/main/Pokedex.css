@@ -9,9 +9,21 @@
 body{
     background: url(../Images/bg.png) no-repeat center center fixed;
     background-size: cover;
-    background-color: #cccccc;
     font-family: 'Raleway', sans-serif;
     overflow-x: hidden;
+}
+
+.bulbasaurBackground{
+    background: url(../Images/bg-bs.jpg) no-repeat center center fixed;
+}
+.charmanderBackground{
+    background: url(../Images/bg-cm.jpg) no-repeat center center fixed;
+}
+.squirtleBackground{
+    background: url(../Images/bg-sq.jpg) no-repeat center center fixed;
+}
+.genericBackground{
+    background: url(../Images/bg.png) no-repeat center center fixed;
 }
 
 #main-container{
