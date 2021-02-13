@@ -3,9 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
-
+/*
 @font-face{
     font-family: 'Raleway Regular';
     src: local('Raleway Regular'), url(../fonts/Raleway-Medium.ttf) format('truetype');
@@ -22,11 +21,16 @@
     font-family: 'Raleway Bold';
     src: local('Raleway Bold'), url(../fonts/Raleway-SemiBold.ttf) format('truetype');
   }
-  
+  */
+
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;600&display=swap');
+
 body{
     background: url(../Images/bg-bs.jpg) no-repeat center center fixed;
     background-size: cover;
     background-color: #cccccc;
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
 }
 
 #main-container{
