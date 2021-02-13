@@ -12,7 +12,7 @@
 
 #pokemon-data h2{
     text-transform: uppercase;
-    font-family: 'Raleway Bold';
+    font-family: 'Raleway Bold', sans-serif;
     font-size: 2.5rem;
     margin-bottom: 20px;
     /* color: rgb(0, 0, 0); */
@@ -23,7 +23,7 @@
     margin: 5px;
     text-transform: capitalize;
     text-align: left;
-    font-family: 'Raleway Regular';
+    font-family: 'Raleway Regular', sans-serif;
 }
 
 #pokemon-data p:last-child{
