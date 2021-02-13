@@ -53,6 +53,7 @@ const Pokemon = props => {
     function changeBackground(id){
         const imagePokemon = document.querySelector('body')
         imagePokemon.removeAttribute('class')
+        imagePokemon.style.backgroundSize = 'cover'
         
         if(id === 1){
             imagePokemon.classList.add('bulbasaurBackground')

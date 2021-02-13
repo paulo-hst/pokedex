@@ -15,19 +15,15 @@ body{
 
 .bulbasaurBackground{
     background: url(../Images/bg-bs.jpg) no-repeat center center fixed;
-    background-size: cover;
 }
 .charmanderBackground{
     background: url(../Images/bg-cm.jpg) no-repeat center center fixed;
-    background-size: cover;
 }
 .squirtleBackground{
     background: url(../Images/bg-sq.jpg) no-repeat center center fixed;
-    background-size: cover;
 }
 .genericBackground{
     background: url(../Images/bg.png) no-repeat center center fixed;
-    background-size: cover;
 }
 
 #main-container{
